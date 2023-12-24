@@ -1,0 +1,25 @@
+-----务必在自带的控制台程序运行命令--------
+创建项目
+npx react-native@latest init my_app
+安装依赖
+npm i
+修改镜像源
+文件： android\build.gradle
+maven { url 'https://repo.maven.apache.org/maven2/' }
+文件： android\gradle\wrapper\gradle-wrapper.properties
+distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-8.3-all.zip
+检查环境
+npx react-native doctor
+运行 (运行之前打开模拟器)  "react-native": "0.73.0"  用此版本 0.73.1 版本有问题
+npm run android
+运行后可能会报错 新建此目录
+android\app\src\main\assets
+运行
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+以上命令写在了package.json 执行
+npm run bundle
+之后再运行即可
+npm run android
+
+
+

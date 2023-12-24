@@ -8,6 +8,7 @@ buildscript {
         kotlinVersion = "1.8.0"
     }
     repositories {
+        maven { url 'https://repo.maven.apache.org/maven2/' }
         google()
         mavenCentral()
     }
@@ -15,6 +16,14 @@ buildscript {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://repo.maven.apache.org/maven2/' }
+        google()
+        jcenter()
     }
 }
 
